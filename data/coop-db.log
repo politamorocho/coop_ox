@@ -1,0 +1,7 @@
+/*C4*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+alter table Turno add column ruta_oid varchar(32)
+alter table Turno add column usuario_oid varchar(32)
+alter table Turno add constraint FK30laqkndpnu0pr7kkphy5mla8 foreign key (ruta_oid) references Ruta
+alter table Turno add constraint FKnq56x2yiikw4y35u1lbrykme1 foreign key (usuario_oid) references Usuario
