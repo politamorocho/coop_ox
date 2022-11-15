@@ -2,6 +2,7 @@ package com.tuempresa.coop.modelo;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 
 import org.hibernate.annotations.*;
 import org.openxava.annotations.*;
@@ -46,10 +47,14 @@ public class Turno {
 		    Ruta ruta; // Una referencia Java convencional
 	 
 	 @ManyToOne( // La referencia se almacena como una relación en la base de datos
-		        fetch=FetchType.LAZY, // La referencia se carga bajo demanda
+		       // fetch=FetchType.LAZY, // La referencia se carga bajo demanda
 		        optional=true) // La referencia puede estar sin valor
-		   //@DescriptionsList // Así la referencia se visualiza usando un combo
-		  
+	 
+	 @JoinColumn(
+		        name = "cedula",
+		        nullable = true,
+		        foreignKey = @ForeignKey(name = "fk_cb_turno_usuario"))
+		   @DescriptionsList  // Así la referencia se visualiza usando un combo
 		    Usuario usuario; // Una referencia Java convencional
 	
 

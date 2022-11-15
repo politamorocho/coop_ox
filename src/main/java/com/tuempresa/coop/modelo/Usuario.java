@@ -20,10 +20,10 @@ public class Usuario {
     String oid;
 	
 	@Column() 
-	String nom_usuario;
+	String nombreUsuario;
 	
 	@Column()
-	String clave_usuario;
+	String claveUsuario;
 	
 	@Column()
 	String nombre;
@@ -34,6 +34,7 @@ public class Usuario {
 	@Column()
 	String correo;
 	
+	
 	@Column()
 	String cedula;
 	
@@ -41,7 +42,7 @@ public class Usuario {
 	String telefono;
 	
 	@Column()
-	String tipo_usuario;
+	String tipoUsuario;
 	
 	@Column()
 	Boolean estadoActivo;
